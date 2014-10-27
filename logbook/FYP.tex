@@ -1,0 +1,95 @@
+\documentclass[10pt]{article}
+
+
+
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{lipsum}
+\usepackage{verbatim}
+\usepackage{hyperref}
+\newcommand{\quotes}[1]{``#1''}
+
+\usepackage[top=1in,bottom=1in,left=0.5in,right=0.5in]{geometry}
+
+
+\begin{document}
+
+\title{FYP Logbook}
+\author{
+		Ruohan Gao \\ gr013@ie.cuhk.edu.hk
+		\and
+		Qiming Zhang \\ zq113@ie.cuhk.edu.hk
+}
+\maketitle
+
+\section{Expected Outcome}
+The expected result of this project is a system, which is able to find relevant \& important papers given a query (which may be a few keywords or a paper itself). The project is targeting the arXiv (http://arxiv.org) database, one of the most active paper repository in computer science. The system may comprise several components: a data backend, a topic analysis algorithm that can determine how relevant two papers are, as well as a UI for query.
+
+\section{Paper Reading}
+
+\subsection{Latent Dirichlet Allocation \cite{label1}}
+
+\subsection{Introduction to Probabilistic Topic Models \cite{label2}}
+
+\subsection{Replicated Softmax: an Undirected Topic Model \cite{label3}}
+
+\subsection{Algorithms for Non-negative Matrix Factorization \cite{label4}}
+
+\subsection{Probabilistic Latent Semantic Indexing \cite{label5}}
+
+\subsection{Document Clustering Based On Non-negative Matrix Factorization \cite{label6}}
+	\subsubsection{Summary}
+	In the latent semantic space derived by the non-negative matrix factorization (NMF), each axis captures the base topic of a par- ticular document cluster, and each document is represented as an additive combination of the base topics. The cluster membership of each document can be easily determined by finding the base topic (the axis) with which the document has the largest projection value. NMF differs from the latent semantic indexing method based on the singular vector decomposition (SVD) and the related spectral clustering methods in that the latent semantic space derived by NMF does not need to be orthogonal, and that each document is guaranteed to take only non-negative values in all the latent semantic directions. These two differences bring about an important benefit that each axis in the space derived by the NMF has a much more straightforward correspondence with each document cluster than in the space derived by the SVD, and thereby document clustering results can be directly derived without additional clustering operations.
+	\subsubsection{Future Pointers}
+	1. Two problems addressed:
+	\begin{enumerate}
+	\item[a.] topics can overlap, not necessarily orthogonal
+	\item[b.] linear combination coefficients should all take non-negative values
+	\end{enumerate}
+	2. Weighted term-frequency vector to represent each document (TF-IDF)\\
+	3. Steps of NMF document clustering algorithms
+	
+	\subsubsection{Link}
+	\href{http://web.stanford.edu/class/ee378b/papers/xu-liu-gong-document.pdf}{\textit{http://web.stanford.edu/class/ee378b/papers/xu-liu-gong-document.pdf}}
+
+\subsection{Research Paper Recommender System Evaluation \cite{label7}}
+
+\subsection{Projected Gradient Methods for Non-negative Matrix Factorization \cite{label8}}
+	\subsubsection{Summary}
+	Non-negative matrix factorization (NMF) can be formulated as a minimization problem with bound constraints. This paper proposes two projected gradient methods for NMF, both of which exhibit strong optimization properties. The one solving least square sub-problems leads to faster convergence than the popular multiplicative update method. 
+	\subsubsection{Future Pointers}
+	1. Conventional Approach: $V \approx WH$ where $V$ is an $n \times m$ data matrix, $W \in R^{n \times r}$ and $H \in R^{r \times m}$. The objective is to find $W$ and $H$ which minimize the difference between $V$ and $WH$:
+	$$\mathop{min}_{W,H} f(W,H) \equiv \frac{1}{2} \mathop{\sum}_{i=1}^{n} \mathop{\sum}_{j=1}^{m}(V_{ij}-(WH)_{ij})^2$$
+	2. Two projected gradient methods for NMF
+	\begin{enumerate}
+	\item[a.] Alternating Non-negative Least Squares Using Projected Gradient Methods
+	\item[b.] Directly Applying Projected Gradients to NMF
+	\end{enumerate}
+	3. Experiments and evaluations are done systematically
+	\subsubsection{Link}
+	\href{http://www.csie.ntu.edu.tw/~cjlin/papers/pgradnmf.pdf}{\textit{http://www.csie.ntu.edu.tw/~cjlin/papers/pgradnmf.pdf}}
+
+\section{Dataset Description}
+
+\subsection{NIPS}
+The NIPS data set contains papers from the NIPS conferences between 1988 and 2003. The conference is characterized by contributions from a number of different research communities in the general area of learning algorithms.
+\subsection{arXiv}
+The arXiv is a repository of electronic preprints, known as e-prints, of scientific papers in the fields of mathematics, physics, astronomy, computer science, quantitative biology, statistics, and quantitative finance, which can be accessed online.
+\section{Implementation}
+
+\section{Evaluation}
+
+\section{Future Work}
+
+\begin{thebibliography}{9}
+\bibitem{label1} Blei D M, Ng A Y, Jordan M I. Latent dirichlet allocation[J]. the Journal of machine Learning research, 2003, 3: 993-1022.
+\bibitem{label2} Blei D M. Probabilistic topic models[J]. Communications of the ACM, 2012, 55(4): 77-84.
+\bibitem{label3} Hinton G E, Salakhutdinov R. Replicated softmax: an undirected topic model[C]//Advances in neural information processing systems. 2009: 1607-1614.
+\bibitem{label4} Lee, Daniel D., and H. Sebastian Seung. "Algorithms for non-negative matrix factorization." Advances in neural information processing systems. 2001.
+\bibitem{label5} Hofmann, Thomas. "Probabilistic latent semantic indexing." Proceedings of the 22nd annual international ACM SIGIR conference on Research and development in information retrieval. ACM, 1999.
+\bibitem{label6} Xu, Wei, Xin Liu, and Yihong Gong. "Document clustering based on non-negative matrix factorization." Proceedings of the 26th annual international ACM SIGIR conference on Research and development in informaion retrieval. ACM, 2003.
+\bibitem{label7} Beel, Joeran, et al. "Research paper recommender system evaluation: a quantitative literature survey." Proceedings of the International Workshop on Reproducibility and Replication in Recommender Systems Evaluation. ACM, 2013.
+\bibitem{label8} Lin C J. Projected gradient methods for nonnegative matrix factorization[J]. Neural computation, 2007, 19(10): 2756-2779.
+\end{thebibliography}
+
+\end{document}
